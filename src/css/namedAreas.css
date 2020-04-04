@@ -1,0 +1,43 @@
+.header {
+  grid-area: hd;
+  height: 10rem;
+}
+.header h1 {
+  justify-self: center;
+  align-self: center;
+
+}
+.footer {
+  grid-area: ft;
+  height: 5rem;
+}
+.content {
+  grid-area: main;
+  height: 100%;
+}
+.navbar {
+  grid-area: nav;
+  grid-template-columns: repeat(7, 1fe);
+}
+.sidebar {
+  grid-area: sd;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-template-areas: 
+    "hd hd hd hd"
+    "nav nav nav nav"
+    "sd main main main "
+    "ft ft ft ft";
+}
+* {box-sizing: border-box;}
+
+.wrapper {
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;
+  max-width: 100%;
+  margin: 0 auto;
+}

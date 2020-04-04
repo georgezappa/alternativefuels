@@ -1,0 +1,43 @@
+{
+  "name": "alternativefuels",
+  "version": "0.1.0",
+  "description": "This project gathers various publicly available alternate fuels information",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint src --ext js",
+    "test": "yarn run build && jest"
+  },
+  "author": "GeorgeZappa",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.7.5",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "mkdirp": "^1.0.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgezappa/alternativeFuels.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "workbox",
+    "service-worker"
+  ],
+  "bugs": {
+    "url": "https://github.com/georgezappa/alternativeFuels/issues"
+  },
+  "dependencies": {
+    "tailwindcss": "^1.2.0"
+  }
+}
