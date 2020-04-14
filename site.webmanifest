@@ -1,9 +1,9 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "AlternativeFuels",
+  "name": "alternativefuels",
   "icons": [{
-    "src": "icon.png",
-    "type": "image/png",
+    "src": "src/images/icon/icon.svg",
+    "type": "image/svg",
     "sizes": "192x192"
   }],
   "start_url": "/?utm_source=homescreen",

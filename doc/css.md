@@ -41,7 +41,7 @@ styles:
 
 * provide basic typography settings that improve text readability
 * protect against unwanted `text-shadow` during text highlighting
-* tweak the default alignment of some elements (e.g.: `img`, `video`,
+* tweak the default alignment of some elements (e.g.: `images`, `video`,
   `fieldset`, `textarea`)
 * style the prompt that is displayed to users using an outdated browser
 * and more...

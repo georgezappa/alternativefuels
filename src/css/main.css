@@ -59,7 +59,7 @@ hr {
 audio,
 canvas,
 iframe,
-img,
+images,
 svg,
 video {
   vertical-align: middle;
@@ -248,7 +248,7 @@ textarea {
     display: table-header-group;
   }
   tr,
-  img {
+  images {
     page-break-inside: avoid;
   }
   p,

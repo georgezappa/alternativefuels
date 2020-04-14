@@ -33,7 +33,7 @@ A basic HTML5 Boilerplate site initially looks something like this:
 │   ├── main.css
 │   └── normalize.css
 ├── doc
-├── img
+├── images
 ├── js
 │   ├── main.js
 │   ├── plugins.js

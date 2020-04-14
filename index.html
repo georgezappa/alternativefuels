@@ -1,73 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"
-    />
     <meta charset="utf-8" />
-    <title>Electric Charging Stations</title>
-    <meta
-      name="description"
-      content="This produces a list of electrical charging stations in my neighborhood."
-    />
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="manifest.json" />
-
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="application-name" content="Electric Charging Stations" />
-    <meta
-      name="apple-mobile-web-app-title"
-      content="Electric Charging Stations"
-    />
-    <meta name="theme-color" content="#FFFD00" />
-    <meta name="msapplication-navbutton-color" content="#FFFD00" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="msapplication-starturl" content="/index.html" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <link rel="icon" sizes="128x128" href="images/touch/icon-128x128.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="128x128"
-      href="images/touch/icon-128x128.png"
-    />
-    <link rel="icon" sizes="192x192" href="icon-192x192.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="192x192"
-      href="images/touch/icon-192x192.png"
-    />
-    <link rel="icon" sizes="256x256" href="images/touch/icon-256x256.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="256x256"
-      href="images/touch/icon-256x256.png"
-    />
-    <link rel="icon" sizes="384x384" href="images/touch/icon-384x384.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="384x384"
-      href="/images/touch/icon-384x384.png"
-    />
-    <link rel="icon" sizes="512x512" href="images/touch/icon-512x512.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="512x512"
-      href="images/touch/icon-512x512.png"
-    />
+    <title>Alternative Fuels Project</title>
+    <!-- partial:src/views/head/head.html -->
+    <!-- partial -->
   </head>
 
   <body>
@@ -79,21 +16,9 @@
             This is my attrmpt to provide access to alternative fuel resources
           </h2>
         </hgroup>
-        <!-- /#main-nav -->
-        <nav>
-          <ul>
-            <li>
-              <a href="#">
-                <img src="logos/purpleBanjo2.jpg" alt="My logo png" />
-              </a>
-            </li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="views/elec-charging.html">Electric</a></li>
-            <li><a href="views/dylanThomas.html">Thomas</a></li>
-            <li><a href="views/contact.html">Contact</a></li>
-          </ul>
-        </nav>
       </header>
+      <!-- partial:src/views/nav/nav.html -->
+      <!-- partial -->
 
       <main>
         <article></article>
@@ -101,32 +26,45 @@
           <button id="installBtn">Install app</button>
         </section>
       </main>
-      <footer class="footer"></footer>
+      <footer class="footer">
+        <!-- partial:src/views/foot/foot.html -->
+        <!-- partial -->
+      </footer>
     </div>
     <!-- end container -->
     <script>
       if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function() {
+        window.addEventListener("load", function () {
           navigator.serviceWorker
             .register("service-worker.js")
-            .then(reg => {
-              console.log(" 3  Service worker registered! 😎", reg);
+            .then((reg) => {
+              console.log("Service worker registered! 😎", reg);
             })
-            .catch(err => {
+            .catch((err) => {
               console.log("😥 Service worker registration failed: ", err);
             });
         });
+      }
+      var navList = document.getElementById("nav-lists");
+      function Show() {
+        console.log("This  is  the  show  menu  function  in  the  index");
+        navList.classList.add("_Menus-show");
+      }
+
+      function Hide() {
+        console.log("This  is  the  HIDE  menu  function  in  the  index");
+        navList.classList.remove("_Menus-show");
       }
     </script>
     <script
       language="javascript"
       type="text/javascript"
-      src="js\installApp.js"
+      src="js/installApp.js"
     ></script>
     <script
       language="javascript"
       type="text/javascript"
-      src="js\elecCharging.js"
+      src="js/elecCharging.js"
     ></script>
   </body>
 </html>
