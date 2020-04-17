@@ -3,12 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <title>Electric Charging Stations</title>
-    <link rel="stylesheet" href="../css/index.css" />
+    <!-- partial:head/head.html -->
+    <!-- partial -->
+    <!-- partial:head/headViews.html -->
+    <!-- partial -->
   </head>
 
   <body>
-    <header></header>
     <div class="container">
+      <header></header>
+      <!-- partial:nav/nav.html -->
+      <!-- partial -->
+      <!-- partial:nav/navViews.html -->
+      <!-- partial -->
+
       <section></section>
     </div>
     <script>
@@ -22,7 +30,7 @@
       request.responseType = "json";
       request.send();
 
-      request.onload = function() {
+      request.onload = function () {
         var stations = request.response;
         populateHeader(stations);
         showResults(stations);

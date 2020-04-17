@@ -6,6 +6,12 @@ html {
   color: rgb(53, 10, 134)
 }
 
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
 body {
   /*   font: 0.9em/1.2 Arial, Helvetica, sans-serif; */
   width: 100%;

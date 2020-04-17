@@ -1,64 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta />
-    name="viewport" content="width=device-width, minimum-scale=1.0,
-    initial-scale=1.0, user-scalable=yes" />
     <meta charset="utf-8" />
     <title>Dylan Thomas</title>
-    <link rel="stylesheet" href="css/index.css" />
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="manifest.json" />
-
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="application-name" content="Dylan Thomas" />
-    <meta name="apple-mobile-web-app-title" content="Dylan Thomas" />
-    <meta name="theme-color" content="#FFFD00" />
-    <meta name="msapplication-navbutton-color" content="#FFFD00" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta name="msapplication-starturl" content="/index.html" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <link rel="icon" sizes="128x128" href="/images/touch/icon-128x128.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="128x128"
-      href="/images/touch/icon-128x128.png"
-    />
-    <link rel="icon" sizes="192x192" href="icon-192x192.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="192x192"
-      href="/images/touch/icon-192x192.png"
-    />
-    <link rel="icon" sizes="256x256" href="/images/touch/icon-256x256.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="256x256"
-      href="/images/touch/icon-256x256.png"
-    />
-    <link rel="icon" sizes="384x384" href="/images/touch/icon-384x384.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="384x384"
-      href="/images/touch/icon-384x384.png"
-    />
-    <link rel="icon" sizes="512x512" href="/images/touch/icon-512x512.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="512x512"
-      href="/images/touch/icon-512x512.png"
-    />
+    <!-- partial:head/head.html -->
+    <!-- partial -->
+    <!-- partial:head/headViews.html -->
+    <!-- partial -->
   </head>
 
   <body>
@@ -66,11 +14,13 @@
       <header>
         <h1>Dylan Thomas</h1>
       </header>
-      <main>
-        <article></article>
-        <section id="installBanner" class="banner">
-          <button id="installBtn">Install app</button>
-        </section>
+
+      <!-- partial:nav/nav.html -->
+      <!-- partial -->
+      <!-- partial:nav/navViews.html -->
+      <!-- partial -->
+
+      <div class="container">
         <section class="card">
           <p>
             Dylan Thomas: <br />Do Not Go Gentle Into That Good Night <br />Do
@@ -95,43 +45,9 @@
         </section>
       </main>
       <footer>
-        <ul class="grid-item">
-          <li><a href="#home">home</a></li>
-          <li><a href="#share">share</a></li>
-          <li><a href="#contact">contact</a></li>
-          <li><a href="#about">about</a></li>
-        </ul>
+        <!-- partial:foot/foot.html -->
+        <!-- partial -->
       </footer>
     </div>
-    <script>
-      if ("serviceWorker" in navigator) {
-        console.log(" 1  Index.html js -- prior to adding event Listener");
-        window.addEventListener("load", function() {
-          navigator.serviceWorker
-            .register("service-worker.js")
-            .then(reg => {
-              console.log(
-                " 2  Still in the index.html, registering the service worker!!"
-              );
-              console.log(" 3  Service worker registered! 😎", reg);
-              console.log(" 4 Index.html, Promise -- reg.....");
-            })
-            .catch(err => {
-              console.log("😥 Service worker registration failed: ", err);
-              console.log("😥 Service worker registration failed: ", err);
-            });
-        });
-      }
-    </script>
-    <script
-      language="javascript"
-      type="text/javascript"
-      src="js\installApp.js"
-    ></script>
-    <script
-      language="javascript"
-      type="text/javascript"
-      src="js\elecCharging.js"
-    ></script>
   </body>
 </html>

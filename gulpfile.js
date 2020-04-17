@@ -2,7 +2,7 @@
 //import { src, task, cache, dest } from 'gulp';
 //import injectPartials from 'gulp-inject-partials';
 const injectPartials = require('gulp-inject-partials');
-const { src, dest, task, series } = require('gulp');
+const { src, dest, task, series, watch } = require('gulp');
 const del = require('del');
 const browserSync = require('browser-sync');
 const reload = browserSync.reload;
@@ -19,10 +19,45 @@ const publishjs = 'public/js';
 function index() {
   console.log('Injecting partials');
   return src('./index.html')
-    .pipe(injectPartials())
+    .pipe(injectPartials({
+      removeTags: true
+    }))
     .pipe(dest(publishFolder));
 };
 task('index', index);
+
+
+// copy any html/views files in source/ to public/
+function copyViews() {
+  console.log('copying views to: ', publishviews);
+  return src(['src/views/*.html',
+    '!src/views/elec-charging.html',
+    '!src/views/contact.html',
+    '!src/views/dylanThomas.html',
+    '!src/views/EdgarAllanPoeVI.html',
+    '!src/views/google-map.html',
+    '!src/views/ReturnOfDrFu-Manchu.html',
+  ])
+    .pipe(dest(publishviews));
+}
+task('copyViews', copyViews);
+
+function viewInjection() {
+  console.log('Injecting view partials');
+  return src([
+    'src/views/elec-charging.html',
+    'src/views/contact.html',
+    'src/views/dylanThomas.html',
+    'src/views/EdgarAllanPoeVI.html',
+    'src/views/google-map.html',
+    'src/views/ReturnOfDrFu-Manchu.html'
+  ])
+    .pipe(injectPartials({
+      removeTags: true
+    }))
+    .pipe(dest(publishviews));
+};
+task('viewInjection', viewInjection);
 
 
 // copy any css files in source/ to public/
@@ -47,14 +82,6 @@ function copyJs() {
 task('copyJs', copyJs);
 
 
-// copy any html/views files in source/ to public/
-function copyViews() {
-  console.log('copying views to: ', publishviews);
-  return src('src/views/*.html')
-    .pipe(dest(publishviews));
-}
-task('copyViews', copyViews);
-
 /*
 // copy any images files in source/ to public/
 function copyImages() {
@@ -72,7 +99,12 @@ function copyImages() {
   console.log('copying images to: ', publishimages);
   return src([
     'src/images/purpleBanjo.jpg',
+    'src/images/icon-128x128.png',
     'src/images/icon-192x192.png',
+    'src/images/icon-256x256.png',
+    'src/images/icon-384x384.png',
+    'src/images/icon-512x512.png',
+    'src/images/poop.png',
     'src/images/food.jpg',
     'src/images/solar.jpg',
     'src/images/weather.jpg'
@@ -107,15 +139,22 @@ function serve() {
   });
 }
 task('serve', serve);
-task('buildAndServe', series(clean, index, copy, copyCss, copyJs, copyViews, copyImages, serve));
+task('buildAndServe',
+  series(clean, index, viewInjection, copy, copyCss, copyJs, copyViews, copyImages, serve));
+
+/*
 
 // watch files for changes and reload
-gulp.task('serve', function () {
+function serve() {
   browserSync({
     server: {
-      baseDir: 'app'
-    }
+      baseDir: 'public'
+    },
+    open: false,
+    port: 3003
   });
 
-  gulp.watch(['*.html', 'styles/**/*.css', 'scripts/**/*.js'], { cwd: 'app' }, reload);
-});
+//  watch(['*.html', 'src/**//*.css', 'src/js/**//*.js'], { cwd: 'src' }, reload);
+//};
+
+*/

@@ -1,51 +1,77 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-        #map {
-            width: 100%;
-            height: 400px;
-            background-color: grey;
-        }
-        </style>
-    </head>
-    <body>
-        My Google map
-        <div id="map"></div>
+  <head>
+    <meta charset="utf-8" />
+    <title>Google Maps</title>
+    <!-- partial:head/head.html -->
+    <!-- partial -->
+    <!-- partial:head/headViews.html -->
+    <!-- partial -->
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>My First Google map</h1>
+      </header>
+      <!-- partial:nav/nav.html -->
+      <!-- partial -->
+      <!-- partial:nav/navViews.html -->
+      <!-- partial -->
 
-        <script>
-        alert("Don't forget to add your own API key to this script, or it won't work properly!");
-        // Set up map
-        function initMap() {
-             // Where the map is centred (look up on google maps)
-            var Nottingham = {lat: 52.961447, lng: -1.158390};
+      <div id="map"></div>
 
-            // Create map object, level of zoom
-            var map = new google.maps.Map(document.getElementById('map'), {
-              zoom: 10,
-              center: Nottingham
-            });
+      <footer class="footer">
+        <!-- partial:foot/foot.html -->
+        <!-- partial -->
+      </footer>
+    </div>
 
-            var geocoder = new google.maps.Geocoder();
-            var incident_location = "Sneinton Road, Nottingham, UK";
+    <script>
+      // Set up map
+      function initMap() {
+        // Add your map here.
+        console.log("Google Maps API version: " + google.maps.version);
+        // Where the map is centred (look up on google maps)
+        var ccd = { lat: 29.566076, lng: -98.530297 };
 
-            geocoder.geocode( { 'address': incident_location }, function(results) {
-                var emoji = 'poop.png';
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location,
-                    animation: google.maps.Animation.DROP,
-                    icon: emoji
-                });
+        // Create map object, level of zoom
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 10,
+          center: ccd,
+        });
 
-            });
-        }
-        </script>
+        var geocoder = new google.maps.Geocoder();
+        var incident_location = "San Antonio, TX";
 
-        <!-- Don't forget to add your own API key here or it won't work!! -->
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-        </script>
+        geocoder.geocode({ address: incident_location }, function (results) {
+          var emoji = "../images/poop.png";
+          var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            animation: google.maps.Animation.DROP,
+            icon: emoji,
+          });
+        });
+      }
+    </script>
 
-    </body>
+    <!--
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?v=weekly
+        &key=AIzaSyDiUKIr1B5Nl30qvIMAnBaajh46Xh02BPI&callback=initMap">
+</script>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?v=weekly
+    &key=AIzaSyDrPA7woqjDJkNOSdzJpgeO4Qt0RoDHwlI&callback=initMap">
+</script>
+
+-->
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?v=weekly&key=AIzaSyC4ipNOlgQdy9vO7GVw-gtNp7ARjvetcWY&callback=initMap"
+    ></script>
+  </body>
 </html>
