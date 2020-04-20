@@ -44,7 +44,7 @@ self.addEventListener('fetch', event => {
       return fetch(event.request);
     })
     .catch(() => {
-      console.error('Caught failed fetch');
+      console.error('Caught failed fetch', event);
     })
   );
 });

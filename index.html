@@ -8,12 +8,12 @@
     <!-- partial:src/views/head/headIndex.html -->
     <!-- partial -->
   </head>
-
+ 
   <body>
-    <div class="container">
+    <div class="wrapper">
       <header class="header">
         <hgroup>
-          <h1>Electric Charging Stations</h1>
+          <h1>Alternative Fuels</h1>
           <h2 id="site-description">
             This is my attrmpt to provide access to alternative fuel resources
           </h2>
@@ -21,13 +21,17 @@
       </header>
       <!-- partial:src/views/nav/nav.html -->
       <!-- partial -->
-
-      <main>
-        <article></article>
+      <!-- partial:src/views/nav/navIndex.html -->
+      <!-- partial -->
+      <div class="content">
+          <a href="#"
+            ><images src="images/solar.jpg" alt="My Alternative Image"
+          /></a>
+        </div>
         <section id="installBanner" class="banner">
           <button id="installBtn">Install app</button>
         </section>
-      </main>
+      </div>
       <footer class="footer">
         <!-- partial:src/views/foot/foot.html -->
         <!-- partial -->
@@ -47,28 +51,6 @@
             });
         });
       }
-      var navList = document.getElementById("nav-lists");
-      function Show() {
-        console.log("This  is  the  show  menu  function  in  the  index");
-        navList.classList.add("_Menus-show");
-      }
-
-      function Hide() {
-        console.log("This  is  the  HIDE  menu  function  in  the  index");
-        navList.classList.remove("_Menus-show");
-      }
     </script>
-    <script
-      language="javascript"
-      type="text/javascript"
-      src="js/installApp.js"
-    ></script>
-    <script
-      async
-      defer
-      language="javascript"
-      type="text/javascript"
-      src="js/elecCharging.js"
-    ></script>
   </body>
 </html>

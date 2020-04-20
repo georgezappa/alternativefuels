@@ -41,6 +41,9 @@
   },
   "keywords": [
     "node",
+    "npm",
+    "yarn",
+    "gulp",
     "javascript",
     "workbox",
     "service-worker"
@@ -48,5 +51,7 @@
   "bugs": {
     "url": "https://github.com/georgezappa/alternativefuels/issues"
   },
-  "dependencies": {}
+  "dependencies": {
+    "core-js": "^3"
+  }
 }

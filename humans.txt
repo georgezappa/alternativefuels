@@ -1,15 +1,53 @@
 # humanstxt.org/
 # The humans responsible & technology colophon
+      
+                                
+    /* SITE */
+
+                   
+    Location: San Antonio, Texas, USA.
+    Last update: 2020/04/19 
+    Standards: HTML5, CSS3
+    georgezappa@gmail.com, www.zoezappa.org/contact
+
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <name>    --      <role>      --      <twitter>
+     GeorgeZappa    Principal Designer     Nope.
 
 # THANKS
 
-    <name>
+    The first time someone contributes, they get a shout out.
 
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    Apache Server Configs, Normalize.css
+    Javascript, gulp, nodejs, npm, yarn.
+    html5boilerplate main.css.
+    Google maps, github repository.
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Definition:
+        A publisher's emblem or imprint, especially one on the title page or spine of a book.
+Historical:
+        A statement at the end of a book, typically with a printer's emblem,
+        giving information about its authorship and printing.
+
+Origin:
+     Early 17th century (denoting a finishing touch):
+     via late Latin from Greek kolophōn ‘summit or finishing touch’.

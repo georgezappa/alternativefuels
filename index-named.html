@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Alternative Fuels Project</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/grid-named-areas.css" />
+    <link rel="author" href="humans.txt" />
+    <!--
+        manifest.json provides metadata used when your web app is added to the
+        homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+      -->
+    <link rel="manifest" href="manifest.json" />
+ 
+    <script>
+      var navList = document.getElementById("nav-lists");
+      function Show() {
+        navList.classList.add("_Menus-show");
+      }
+
+      function Hide() {
+        navList.classList.remove("_Menus-show");
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <header class="header">
+        <hgroup>
+          <h1>Alternative Fuels</h1>
+          <h2 id="site-description">
+            This is my attrmpt to provide access to alternative fuel resources
+          </h2>
+        </hgroup>
+      </header>
+      <div class="logo">
+        <a href="#"> 
+          <images src="images/purpleBanjo.jpg" alt="My Stolen Image" /></a>
+      </div>
+        <div class="icon-bar" onclick="Show()">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+      
+          <div class="close"><span onclick="Hide()">×</span></div>
+          <div  class="menu"><a href="index.html">Home</a></div>
+          <div  class="menu"><a href="views/elec-charging.html">Electric</a></div>
+          <div  class="menu"><a href="views/dylanThomas.html">Thomas</a></div>
+          <div  class="menu"><a href="views/EdgarAllanPoeVI.html">Edgar Allan Poe</a></div>
+          <div  class="menu"><a href="views/google-map.html">Map</a></div>
+          <div  class="menu"><a href="views/ReturnOfDrFu-Manchu.html">Dr Fu-Manchu</a></div>
+          <div  class="menu"><a href="views/contact.html">Contact</a></div>
+
+
+
+      <div class="main">
+          <a href="#"
+            ><images src="images/solar.jpg" alt="My Alternative Image"
+          /></a>
+      </div>
+
+      <section id="installBanner" class="banner">
+        <button id="installBtn">Install app</button>
+      </section>
+
+      </div>
+      <footer class="footer">
+        <!-- partial:src/views/foot/foot.html -->
+        <!-- partial -->
+      </footer>
+    </div> <!-- end container -->
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("service-worker.js")
+            .then((reg) => {
+              console.log("Service worker registered! 😎", reg);
+            })
+            .catch((err) => {
+              console.log("😥 Service worker registration failed: ", err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

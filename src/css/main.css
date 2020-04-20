@@ -98,6 +98,342 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* || general styles */
+
+html {
+  font-family: helvetica, arial, sans-serif;
+  background-color: #FFFD00;
+  color: rgb(53, 10, 134)
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+body {
+  /*   font: 0.9em/1.2 Arial, Helvetica, sans-serif; */
+  width: 100%;
+  margin: 1em auto;
+  align-items: center;
+  background-color: rgb(241, 241, 216);
+  max-height: 90vh;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  max-height: 100vh;
+  grid-template-areas: "header  header"
+                       "nav   nav"
+                       "aside main"
+                       "footer  footer";
+}
+
+h1, h2 {
+  font-family: 'helvetica', sans-serif;
+}
+
+/* header styles */
+
+header {
+  grid-area: header;
+  background-color: rgb(235, 235, 131);
+  box-sizing: border-box;
+  display: grid;
+  padding: 10px;
+  height: 10rem;
+  width: 100%;
+}
+
+header p {
+  font-size: 1.0rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* navigation styles */
+
+nav ul li a {
+  color: rgb(73, 8, 13);
+}
+
+nav ul {
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  height: 7.8rem;
+  font-size: 1.5em;
+  background: rgb(136, 86, 185);
+  /*padding-right: 19px;*/
+}
+
+.banner {
+  align-content: center;
+  display: none;
+  justify-content: center;
+  width: 100%;
+}
+/* link styles */
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+
+a:link {
+  color: #011053;
+}
+
+a:visited {
+  color: rgb(114, 101, 231);
+}
+
+a:focus {
+  border-bottom: 1px solid;
+  background: rgb(45, 36, 94);
+}
+
+a:hover {
+  border-bottom: 1px solid;     
+  background: rgb(27, 31, 94);
+}
+
+a:active {
+  background: #4c028a;
+  color: rgb(93, 71, 153);
+}
+
+a[href*="http"] {
+  background: url('') no-repeat 100% 0;
+  background-size: 16px 16px;
+  padding-right: 19px;
+}
+
+/* section styles */
+
+article {
+  width: 100%;
+}
+
+article p {
+  margin: 5px 0;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #FFFD00;
+  grid-column: 1 / -1;
+  /* needed for the floated layout */
+  clear: both;
+}
+
+.container {
+  height: 100vh;
+  background-color: #f1a9a9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container .logo {
+  display: flex;
+  flex-flow: row;
+  max-width: 250px;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.container .logo a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 60px;
+}
+
+.container .logo a images {
+  max-width: 100%;
+  max-height: 60px;
+}
+
+.mainPage {
+  font-size: 1.3rem;
+  letter-spacing: .25rem;
+  word-spacing: .25rem;
+}
+
+.container .mainPage a images {
+  max-width: 100%;
+  max-height: 60px;
+}
+
+.container .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 10px;
+}
+
+.container .navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container .navbar ul li a {
+  text-decoration: none;
+  color: #160d8f;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.container .navbar ul li a:hover {
+  color: #ffffff;
+  background-color: rgba(97, 65, 65, 0.9);
+}
+
+.container .navbar ul .close {
+  display: none;
+  text-align: right;
+  padding: 10px;
+}
+
+.container .navbar ul .close span {
+  font-size: 40px;
+  display: inline-block;
+  border: 1px solid #7e0202;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.container .navbar .icon-bar {
+  padding: 18px 8px;
+  width: 50px;
+  height: 60px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.container .navbar .icon-bar i {
+  background-color: #ffffff;
+  height: 2px;
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .container .logo {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  .container .navbar {
+    -webkit-box-flex: 0;
+    -ms-flex: 0;
+    flex: 0;
+  }
+
+  .container .navbar ul {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    position: fixed;
+    left: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-transition: left 0.3s;
+    -o-transition: left 0.3s;
+    transition: left 0.3s;
+  }
+
+  .container .navbar ul li a {
+    padding: 10px;
+    font-size: 16px;
+    height: auto;
+    line-height: normal;
+    color: #555555;
+  }
+
+  .container .navbar ul .close {
+    display: block;
+  }
+
+  .container .navbar .icon-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .container .navbar ._Menus-show {
+    left: 0;
+  }
+}
+
+
+
+
+
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -188,6 +524,7 @@ textarea {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
+  /* 560px on most screens */
   /* Style adjustments for viewports that meet the condition */
 }
 
